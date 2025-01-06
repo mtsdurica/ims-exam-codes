@@ -23,7 +23,7 @@ int main()
         double z = (double)rand() / ((double)RAND_MAX + 1);
         z *= r;
 
-        if ((x * x + y * y + z * z) < (r * r * r))
+        if ((x * x + y * y + z * z) < (r * r))
             sum++;
     }
     double avg = sum / tries;
