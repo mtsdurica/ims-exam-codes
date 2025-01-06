@@ -1,0 +1,33 @@
+double time = 0.0;
+double step = 0.01;
+cal_t cal;
+void event()
+{
+    printf(...);
+    cal_insert(event, 0, time + step);
+}
+void END(void)
+{
+}
+int main()
+{
+    cal_init();
+    cal_insert(END, -100, TMAX);
+    cal_insert(event, 0, 0);
+    ev_notice e;
+    while ((e.cal_get_first()).evptr != END) // Cyklenie zaznamami v kalendari
+    {
+        while (time < e.atime) // Spojita
+        {
+            if (time + step > e.atime) // Dokrocenie
+            {
+                step(e.atime - time);
+            }
+            else
+                step(step);
+        }
+        e.evptr(); // Diskretny event
+    }
+    time = e.atime();
+    return 0;
+}
