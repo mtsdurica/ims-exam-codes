@@ -2,6 +2,11 @@
 #include <cstdio>
 #include <cstdlib>
 
+double Uniform()
+{
+    return (double)rand() / ((double)RAND_MAX + 1);
+}
+
 int main()
 {
     srand(0);
@@ -16,12 +21,9 @@ int main()
 
     for (int i = 0; i < tries; i++)
     {
-        double x = (double)rand() / ((double)RAND_MAX + 1);
-        x *= r;
-        double y = (double)rand() / ((double)RAND_MAX + 1);
-        y *= r;
-        double z = (double)rand() / ((double)RAND_MAX + 1);
-        z *= r;
+        double x = Uniform() * r;
+        double y = Uniform() * r;
+        double z = Uniform() * r;
 
         if ((x * x + y * y + z * z) < (r * r))
             sum++;
