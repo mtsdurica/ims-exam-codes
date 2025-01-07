@@ -1,0 +1,14 @@
+int main()
+{
+    double tries = 10000;
+    double sum;
+
+    for (int i = 0; i < tries; i++)
+    {
+        double x = Uniform(50, 80);
+        sum += f(x);
+    }
+    double avg = sum / tries;
+    avg = avg * (80 - 50)
+    return 0;
+}
